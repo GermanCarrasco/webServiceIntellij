@@ -1,0 +1,49 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://ws.calderon/campeonMotoGp-service"
+           targetNamespace="http://ws.calderon/campeonMotoGp-service"
+           elementFormDefault="qualified">
+    <xs:element name="getCampeonesRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCampeonesResponse">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="campeones" type="tns:campeones"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCampeonRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCampeonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="campeones" type="tns:campeones"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+        <xs:complexType name="campeones">
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="apellido" type="xs:string"/>
+                <xs:element name="edad" type="xs:int"/>
+                <xs:element name="equipo" type="xs:string"/>
+                <xs:element name="numCampeonatos" type="xs:int"/>
+                <xs:element name="ultimoCampeonato" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+
+</xs:schema>
+

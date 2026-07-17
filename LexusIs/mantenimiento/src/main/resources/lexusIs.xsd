@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://lexus.ws.mant.gc"
+           targetNamespace="http://lexus.ws.mant.gc"
+           elementFormDefault="qualified">
+<!--    Campos: fecha:localdateTime,codigo:int,gastos:string,monto:double-->
+
+    <!--    traer todo -->
+    <xs:element name="getLexusRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="todo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLexusResponse">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="gastos" type="tns:todosGastos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    encontrar uno por codigo-->
+    <xs:element name="getOneLexusRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigo" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getOneLexusResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="one" type="tns:todosGastos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--    crear un registro-->
+    <xs:element name="setLexusRequest">
+        <xs:complexType>
+            <xs:sequence>
+<!--                <xs:element name="codigo" type="xs:int"/>-->
+                <xs:element name="fecha" type="xs:dateTime"/>
+                <xs:element name="gasto" type="xs:string"/>
+                <xs:element name="monto" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="setLexusResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigo" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    Objeto-->
+    <xs:complexType name="todosGastos">
+        <xs:sequence>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="fecha" type="xs:dateTime"/>
+            <xs:element name="gasto" type="xs:string"/>
+            <xs:element name="monto" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

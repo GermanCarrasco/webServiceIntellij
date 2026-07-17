@@ -1,0 +1,13 @@
+package com.ws.manga.Mangas;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class MangasApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

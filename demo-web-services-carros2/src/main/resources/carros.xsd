@@ -1,0 +1,57 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://spring.io.carros2-jar-maven-ws"
+           targetNamespace="http://spring.io.carros2-jar-maven-ws"
+           elementFormDefault="qualified">
+
+    <xs:element name="getMarcaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="marca" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMarcaResponse">
+        <xs:complexType>
+            <xs:sequence >
+                <xs:element name="marca" minOccurs="0" maxOccurs="unbounded" type="tns:marca"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="marca">
+        <xs:sequence>
+            <xs:element name="marca" type="xs:string"/>
+            <xs:element name="modelo" type="xs:string"/>
+            <xs:element name="version" type="xs:string"/>
+            <xs:element name="año" type="xs:int"/>
+            <xs:element name="cilindrada" type="xs:string"/>
+            <xs:element name="potencia" type="xs:string"/>
+            <xs:element name="id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+<!--    Crear-->
+    <xs:element name="setCarroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="marca" type="xs:string"/>
+                <xs:element name="modelo" type="xs:string"/>
+                <xs:element name="version" type="xs:string"/>
+                <xs:element name="año" type="xs:int"/>
+                <xs:element name="cilindrada" type="xs:string"/>
+                <xs:element name="potencia" type="xs:string"/>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCarroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idRespuesta" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
